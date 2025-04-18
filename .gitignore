@@ -1,0 +1,34 @@
+# Binários e objetos
+*.o
+*.out
+*.a
+*.so
+*.exe
+
+# Arquivos gerados por make
+*.d
+*.dSYM/
+*.log
+
+# Arquivos de execução/testes
+a.out
+core
+vgcore.*
+
+# Diretórios de build (se usar)
+build/
+bin/
+obj/
+
+# Arquivos temporários do sistema/editor
+*~
+*.swp
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Diretórios ocultos de editores
+.vscode/
+.idea/
+
