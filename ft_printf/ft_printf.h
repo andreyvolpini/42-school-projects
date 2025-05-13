@@ -7,5 +7,10 @@
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
+int	ft_putnbr(int n);
+int	ft_putnbr_unsigned(unsigned int n);
+int	ft_puthex(unsigned int n, char format);
+int	ft_putptr(unsigned long ptr);
+int	handle_format(char c, va_list args);
 
 #endif
