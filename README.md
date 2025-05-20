@@ -16,7 +16,7 @@
 |-----------------|----------------|--------------------------------------------------|
 | [`libft`](./libft)         | ✅ Concluído     | Biblioteca padrão em C                          |
 | [`ft_printf`](./ft_printf) | 🚧 Em progresso  | Reimplementação da função `printf`              |
-| [`get_next_line`](./get_next_line) | ⏳ A fazer      | Leitura linha por linha de um arquivo            |
+| [`get_next_line`](./get_next_line) | 🚧 Em progresso      | Leitura linha por linha de um arquivo            |
 | [`Born2beroot`](./Born2beroot)     | ⏳ A fazer      | Configuração de uma máquina Linux segura        |
 
 

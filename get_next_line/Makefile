@@ -1,7 +1,7 @@
 NAME = libget_next_line.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = get_next_line.c get_next_line_utils.c
+SRC = get_next_line.c get_next_line_utils.c get_next_line_tools.c
 OBJ = $(SRC:.c=.o)
 
 HEADER = get_next_line.h
