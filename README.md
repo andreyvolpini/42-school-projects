@@ -15,9 +15,9 @@
 | Projeto         | Status         | Descrição                                        |
 |-----------------|----------------|--------------------------------------------------|
 | [`libft`](./libft)         | ✅ Concluído     | Biblioteca padrão em C                          |
-| [`ft_printf`](./ft_printf) | 🚧 Em progresso  | Reimplementação da função `printf`              |
-| [`get_next_line`](./get_next_line) | 🚧 Em progresso      | Leitura linha por linha de um arquivo            |
-| [`Born2beroot`](./Born2beroot)     | ⏳ A fazer      | Configuração de uma máquina Linux segura        |
+| [`ft_printf`](./ft_printf) | ✅ Concluído     | Reimplementação da função `printf`              |
+| [`get_next_line`](./get_next_line) | ✅ Concluído     | Leitura linha por linha de um arquivo           |
+| [`born2beroot`](./born2beroot)     | ⏳ A fazer       | Configuração de uma máquina Linux segura        |
 
 
 ---
@@ -25,7 +25,7 @@
 - 📁 [Libft](./libft)
 - 📁 [ft_printf](./ft_printf)
 - 📁 [get_next_line](./get_next_line)
-- 📁 [Born2beroot](./Born2beroot)
+- 📁 [born2beroot](./born2beroot)
 
 
 ---
