@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/16 11:07:55 by avolpini          #+#    #+#             */
+/*   Updated: 2025/04/16 11:08:26 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_num_len(int n)
@@ -17,9 +29,9 @@ static int	ft_num_len(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		len;
-	unsigned int			num;
+	char			*str;
+	int				len;
+	unsigned int	num;
 
 	if (n < 0)
 		num = -n;

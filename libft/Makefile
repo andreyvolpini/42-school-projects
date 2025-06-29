@@ -1,6 +1,6 @@
 NAME = libft.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_toupper.c ft_tolower.c ft_memset.c ft_bzero.c \
@@ -16,22 +16,18 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@echo "✅ Biblioteca $(NAME) criada com sucesso!"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "🔨 Compilando $<"
 
 clean:
 	@rm -f $(OBJ)
-	@echo "🗑️ Arquivos .o removidos!"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "🗑️ Tudo limpo, incluindo $(NAME)!"
 
 re: fclean all
 
 bonus:
 	@$(MAKE) BONUS=1
-	@echo "✨ Funções bônus incluídas!"
+

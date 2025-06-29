@@ -6,7 +6,7 @@
 /*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 06:08:32 by avolpini          #+#    #+#             */
-/*   Updated: 2025/04/10 06:28:10 by avolpini         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:03:51 by avolpini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strdup(const char *s)
 {
 	size_t		i;
 	size_t		s_len;
-	char	*array;
+	char		*array;
 
 	s_len = ft_strlen(s);
 	array = malloc(sizeof(char) * (s_len + 1));

@@ -6,7 +6,7 @@
 /*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 05:01:43 by avolpini          #+#    #+#             */
-/*   Updated: 2025/04/10 07:03:39 by avolpini         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:05:26 by avolpini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
+	size_t				i;
 	const unsigned char	*ptr;
 
 	i = 0;

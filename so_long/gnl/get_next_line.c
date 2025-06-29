@@ -3,15 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 07:09:46 by avolpini          #+#    #+#             */
-/*   Updated: 2025/05/23 07:19:26 by avolpini         ###   ########.fr       */
+/*   Updated: 2025/06/28 14:29:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "../libft/libft.h"
+
 #include <stdlib.h>
+
+char	*ft_strjoin_and_free(char *s1, char *s2)
+{
+	char	*joined;
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	joined = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!joined)
+	{
+		if (s1)
+			free(s1);
+		return (NULL);
+	}
+	while (s1 && s1[i])
+	{
+		joined[i] = s1[i];
+		i++;
+	}
+	while (s2 && s2[j])
+		joined[i++] = s2[j++];
+	joined[i] = '\0';
+	if (s1)
+		free(s1);
+	return (joined);
+}
 
 static char	*extract_line(char *stash)
 {
@@ -83,6 +113,8 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
+	if (!stash)
+		stash = ft_strdup("");
 	bytes_read = 1;
 	while (!ft_strchr(stash, '\n') && bytes_read > 0)
 	{

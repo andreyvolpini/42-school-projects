@@ -6,7 +6,7 @@
 /*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 18:21:11 by avolpini          #+#    #+#             */
-/*   Updated: 2025/04/10 07:39:42 by avolpini         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:12:23 by avolpini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
+		while (n--)
+			d[n] = s[n];
 	}
 	return (dest);
 }
