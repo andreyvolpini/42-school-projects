@@ -1,66 +1,43 @@
-<h1 align="center">Hi, I'm Andrey Volpini 👋</h1>
+<h1 align="center">🧠 Common Core Projects – 42 Porto</h1>
 
 <p align="center">
-  Software Engineering student at <strong>42 Porto</strong> | Focused on C, Linux, and Low-Level Development 🧠🐧
+  Projects developed during my journey at <strong>42 School Porto</strong>, focused on C programming, algorithms, data structures, and system-level development.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-C-blue?style=flat-square&logo=c&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-In_Progress-yellow?style=flat-square" />
 </p>
 
 ---
 
-## 🚀 About Me
-I'm passionate about technology and solving problems through smart, scalable code.  
-Currently studying at <strong>42 School Porto</strong>, developing advanced skills in <strong>C, Unix systems, algorithms, and low-level architecture</strong> — with the goal of becoming a resilient and well-rounded software engineer.
+## 📚 Projects
 
-Previously worked on automation and data analysis projects using Python, SQL, and Power BI.  
-Now fully focused on systems programming, computer science fundamentals, and backend development.
-
----
-
-## 🎯 Progress at 42 Porto
-- ✅ Milestone 1: `libft`, `ft_printf`, `get_next_line`, `born2beroot`
-- ✅ Milestone 2: `so_long`, `push_swap`
-- 🔄 Currently working on: `pipex`
-- ⏭️ Up Next: `minishell`, `philosopher`
+| Project         | Status         | Description                                                             |
+|----------------|----------------|-------------------------------------------------------------------------|
+| [`libft`](./libft)              | ✅ Completed     | Standard C library with fundamental functions                          |
+| [`ft_printf`](./ft_printf)      | ✅ Completed     | Reimplementation of the `printf` function with parsing and formatting  |
+| [`get_next_line`](./get_next_line) | ✅ Completed   | Line-by-line file reader with dynamic buffer handling                   |
+| [`born2beroot`](./born2beroot)  | ✅ Completed     | Linux server setup using UFW, sudo, and hostname configuration         |
+| [`so_long`](./so_long)          | ✅ Completed     | Simple 2D game using MiniLibX and `.ber` map parsing                   |
+| [`push_swap`](./push_swap)      | ✅ Completed     | Number sorting algorithm using stacks and limited operations           |
+| [`pipex`](./pipex)              | 🚧 In Progress   | Command execution with fork, pipe, and `dup2`                          |
 
 ---
 
-## 📌 Featured Repositories
-🌟 [42 School Projects](https://github.com/andreyvolpini/42-school-projects)  
-> All main 42 projects organized by folder, with documentation in progress
+## 🔍 Quick Navigation
 
-📘 [C Project Tutorials](https://github.com/andreyvolpini/42-school-tutorials) *(upcoming)*  
-> Step-by-step breakdowns and insights into each project's architecture
-
-📊 [Data Analysis Portfolio](https://is.gd/J8Qk7U) *(Python, SQL, Power BI)*  
-> Dashboards and business insights from freelancing work
-
----
-
-## 🛠️ Technologies & Tools
-
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql)
-![Power BI](https://img.shields.io/badge/PowerBI-F2C811?style=flat-square&logo=powerbi)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git)
-![Shell](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash)
-![VSCode](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code)
+- 📁 [`libft`](./libft)
+- 📁 [`ft_printf`](./ft_printf)
+- 📁 [`get_next_line`](./get_next_line)
+- 📁 [`so_long`](./so_long)
+- 📁 [`push_swap`](./push_swap)
+- 📁 [`pipex`](./pipex)
 
 ---
 
-## 🧠 Soft Skills
-- Critical thinking  
-- Autonomous learning  
-- Clean communication  
-- Technical curiosity  
-- Team collaboration
+## 🚀 Cloning the Repository
 
----
-
-## 📫 Contact
-📧 eng.andrey@hotmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/andrey-volpini/) • [GitHub](https://github.com/andreyvolpini) • [Portfolio](https://is.gd/J8Qk7U)
-
----
-
-<p align="center">✨ Thanks for visiting my profile! Open to new challenges and collaborative learning.</p>
+```bash
+git clone https://github.com/andreyvolpini/42-school-projects.git
+cd 42-school-projects
