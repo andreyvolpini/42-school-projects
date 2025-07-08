@@ -1,41 +1,66 @@
-<h1 align="center">🧠 Common Core Projects – 42 School</h1>
+<h1 align="center">Hi, I'm Andrey Volpini 👋</h1>
 
 <p align="center">
-  Repositório com os projetos realizados durante minha jornada na <strong>42 Porto</strong>.
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-C-blue?style=flat-square&logo=c&logoColor=white" alt="C badge" />
-  <img src="https://img.shields.io/badge/Status-Em andamento-yellow?style=flat-square" alt="Status badge" />
+  Software Engineering student at <strong>42 Porto</strong> | Focused on C, Linux, and Low-Level Development 🧠🐧
 </p>
 
 ---
 
-## 📚 Projetos
-| Projeto         | Status         | Descrição                                                             |
-|-----------------|----------------|------------------------------------------------------------------------|
-| [`libft`](./libft)            	 | ✅ Concluído     | Biblioteca padrão em C                                                |
-| [`ft_printf`](./ft_printf)   	 | ✅ Concluído     | Reimplementação da função `printf` com parsing e argumentos variádicos |
-| [`get_next_line`](./get_next_line) | ✅ Concluído     | Leitura linha por linha de arquivos com buffer dinâmico              |
-| [`born2beroot`](./born2beroot)     | ✅ Concluído     | Configuração de uma máquina Linux segura com UFW, sudo e mais        |
-| [`so_long`](./so_long)             | 🚧 Em progresso | Jogo 2D com movimentação, leitura de mapas e MiniLibX                |
-| `push_swap`                        | 🔜 Em breve      | Algoritmos de ordenação com duas pilhas e menor número de instruções |
-| `pipex`                            | 🔜 Em breve      | Execução de comandos encadeados com fork/pipe/dup2                   |
+## 🚀 About Me
+I'm passionate about technology and solving problems through smart, scalable code.  
+Currently studying at <strong>42 School Porto</strong>, developing advanced skills in <strong>C, Unix systems, algorithms, and low-level architecture</strong> — with the goal of becoming a resilient and well-rounded software engineer.
+
+Previously worked on automation and data analysis projects using Python, SQL, and Power BI.  
+Now fully focused on systems programming, computer science fundamentals, and backend development.
 
 ---
 
-## 🔍 Navegue por projeto
-- 📁 [Libft](./libft)
-- 📁 [ft_printf](./ft_printf)
-- 📁 [get_next_line](./get_next_line)
-- 📁 [born2beroot](./born2beroot)
-- 📁 [so_long](./so_long)
+## 🎯 Progress at 42 Porto
+- ✅ Milestone 1: `libft`, `ft_printf`, `get_next_line`, `born2beroot`
+- ✅ Milestone 2: `so_long`, `push_swap`
+- 🔄 Currently working on: `pipex`
+- ⏭️ Up Next: `minishell`, `philosopher`
 
 ---
 
-## 🚀 Como usar
-Clone este repositório:
+## 📌 Featured Repositories
+🌟 [42 School Projects](https://github.com/andreyvolpini/42-school-projects)  
+> All main 42 projects organized by folder, with documentation in progress
 
-```bash
-git clone git@github.com:andreyvolpini/common_core.git
-cd common_core
+📘 [C Project Tutorials](https://github.com/andreyvolpini/42-school-tutorials) *(upcoming)*  
+> Step-by-step breakdowns and insights into each project's architecture
+
+📊 [Data Analysis Portfolio](https://is.gd/J8Qk7U) *(Python, SQL, Power BI)*  
+> Dashboards and business insights from freelancing work
+
+---
+
+## 🛠️ Technologies & Tools
+
+![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python)
+![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql)
+![Power BI](https://img.shields.io/badge/PowerBI-F2C811?style=flat-square&logo=powerbi)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git)
+![Shell](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash)
+![VSCode](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code)
+
+---
+
+## 🧠 Soft Skills
+- Critical thinking  
+- Autonomous learning  
+- Clean communication  
+- Technical curiosity  
+- Team collaboration
+
+---
+
+## 📫 Contact
+📧 eng.andrey@hotmail.com  
+🌐 [LinkedIn](https://www.linkedin.com/in/andrey-volpini/) • [GitHub](https://github.com/andreyvolpini) • [Portfolio](https://is.gd/J8Qk7U)
+
+---
+
+<p align="center">✨ Thanks for visiting my profile! Open to new challenges and collaborative learning.</p>
