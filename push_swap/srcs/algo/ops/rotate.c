@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:32:56 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:32:56 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../push_swap.h"
 
 void	rotate(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return ;
-	first = *stack;// aponta para o primeiro - (2) 3 1 NULL
-	*stack = first->next;// aponta para o segundo valor - 2 (3) 1 NULL
-	first->next = NULL;// quebra o laço, agora temos < *stack->[3]->[1] NULL > e < first->[2]->NULL > 
-	last = *stack;// last = 3
+	first = *stack;
+	*stack = first->next;
+	first->next = NULL;
+	last = *stack;
 	while (last->next)
-		last = last->next; // até achar o final
-	last->next = first; // retornamos o primeiro nó em first que é [2] - 3 1 (2) NULL
+		last = last->next;
+	last->next = first;
 }
 
 void	do_ra(t_stack **a)

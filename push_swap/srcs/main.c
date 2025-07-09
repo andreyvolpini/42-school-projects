@@ -12,14 +12,14 @@
 
 #include "../push_swap.h"
 
-void	free_all(t_stack *a, t_stack *b, int *o, int *s, char **v);
-int	setup_stacks(t_stack **a, char ***v, int **o, int **s, int ac, char **av);
-int	count_values(char **values);
+int		parse_args(char	***v, int ac, char **av);
+int		setup_stacks(t_stack **a, char ***v, int **o, int **s);
+int		count_values(char **values);
 
 int	main(int ac, char **av)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 	int		*original;
 	int		*sorted;
 	char	**values;
@@ -29,16 +29,21 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (ac < 2)
 		return (0);
-	if (!setup_stacks(&a, &values, &original, &sorted, ac, av))
+	if (!parse_args(&values, ac, av))
+		return (1);
+	if (!setup_stacks(&a, &values, &original, &sorted))
 		return (1);
 	to_choose(&a, &b, count_values(values));
-	free_all(a, b, original, sorted, values);
+	free_stack(&a);
+	free_stack(&b);
+	free(original);
+	free(sorted);
+	free_split(values);
 	return (0);
 }
 
-int	setup_stacks(t_stack **a, char ***v, int **o, int **s, int ac, char **av)
+int	parse_args(char	***v, int ac, char **av)
 {
-	int		count;
 	char	*joined;
 
 	joined = join_args(ac, av);
@@ -46,15 +51,25 @@ int	setup_stacks(t_stack **a, char ***v, int **o, int **s, int ac, char **av)
 		return (ft_putstr_fd("Error\nMemory alloc <join_args>\n", 2), 0);
 	*v = ft_split(joined, ' ');
 	free(joined);
-	if (!*v || !**v)
+	if (!*v || !**v || count_values(*v) == 0)
 		return (ft_putstr_fd("Error\nSplit failed\n", 2), free_split(*v), 0);
+	return (1);
+}
+
+int	setup_stacks(t_stack **a, char ***v, int **o, int **s)
+{
+	int		count;
+
 	count = count_values(*v);
 	*o = alloc_array(count, *v);
 	if (!*o)
 		return (free_split(*v), 0);
 	*s = duplicate_and_sort(*o, count);
 	if (!*s)
-		return (ft_putstr_fd("Error\nDuplicate numbers\n", 2), free(*o), free_split(*v), 0);
+	{
+		ft_putstr_fd("Error\nDuplicate numbers\n", 2);
+		return (free(*o), free_split(*v), 0);
+	}
 	if (is_sorted(*o, *s, count))
 		return (free(*o), free(*s), free_split(*v), 0);
 	fill_stack(a, *o, *s, count);
@@ -69,13 +84,4 @@ int	count_values(char **values)
 	while (values[count])
 		count++;
 	return (count);
-}
-
-void	free_all(t_stack *a, t_stack *b, int *o, int *s, char **v)
-{
-	free_stack(&a);
-	free_stack(&b);
-	free(o);
-	free(s);
-	free_split(v);
 }

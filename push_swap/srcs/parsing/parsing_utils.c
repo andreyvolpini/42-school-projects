@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:32:35 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:32:35 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 int	is_valid_number(const char *str)
@@ -27,7 +39,7 @@ void	sort_array(int *sorted, int count)
 		i = 0;
 		sort = 1;
 		while (i < count - 1)
-		{	
+		{
 			if (sorted[i] > sorted[i + 1])
 			{
 				sort = 0;
@@ -73,7 +85,7 @@ int	get_index(int *sorted, int count, int value)
 // dar free no stack caso alguma falha
 void	free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stack || !*stack)
 		return ;

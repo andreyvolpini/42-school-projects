@@ -1,4 +1,16 @@
-#include "../../../push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   chunk.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:30:02 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:30:02 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../push_swap.h"
 
 static void	push_chunck(t_stack **a, t_stack **b, int total_size);
 static void	rotate_or_reverse(t_stack **a, t_stack **b, int min, int max);
@@ -16,9 +28,9 @@ static void	push_chunck(t_stack **a, t_stack **b, int total_size)
 	int		max;
 	int		chunk_size;
 
-	i= 0;
+	i = 0;
 	min = 0;
-	chunk_size = total_size / 6;
+	chunk_size = (total_size + 5) / 6;
 	max = chunk_size;
 	while (*a)
 	{
@@ -40,7 +52,7 @@ static void	push_chunck(t_stack **a, t_stack **b, int total_size)
 
 static void	rotate_or_reverse(t_stack **a, t_stack **b, int min, int max)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if (get_position_in_chunk(*a, min, max) <= (stack_size(*a) / 2))
 	{

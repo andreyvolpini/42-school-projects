@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_array.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:32:38 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:32:38 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 /*
@@ -18,13 +30,19 @@ int	*alloc_array(int count, char **values)
 	while (i < count)
 	{
 		if (!is_valid_number(*values))
-			return (ft_putstr_fd("Error\nInvalid input <alloc_array>\n", 2), free(original), NULL);
+		{
+			ft_putstr_fd("Error\nInvalid input <alloc_array>\n", 2);
+			return (free(original), NULL);
+		}
 		n = ft_atoi(values[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			return (ft_putstr_fd("Error\nOut of range <alloc_array>\n", 2), free(original), NULL);
+		{
+			ft_putstr_fd("Error\nOut of range <alloc_array>\n", 2);
+			return (free(original), NULL);
+		}
 		original[i++] = (int)n;
 	}
-	return (original);	
+	return (original);
 }
 
 /*
@@ -40,17 +58,18 @@ int	*duplicate_and_sort(int *original, int count)
 
 	sorted = malloc(sizeof(int) * count);
 	if (!sorted)
-		return (ft_putstr_fd("Error\nmalloc sorted <duplicate_and-sort>\n", 2), NULL);
+	{
+		ft_putstr_fd("Error\nmalloc sorted <duplicate_and-sort>\n", 2);
+		return (NULL);
+	}
 	ft_memcpy(sorted, original, (sizeof(int) * count));
 	sort_array(sorted, count);
 	i = -1;
-	// verifica números duplicados
 	while (++i < count - 1)
 	{
 		if (sorted[i] == sorted[i + 1])
 			return (free(sorted), NULL);
 	}
-	i = 0;
 	return (sorted);
 }
 
@@ -58,13 +77,14 @@ int	*duplicate_and_sort(int *original, int count)
 --> descobre a posição do primeiro número e armazena como index
 --> new->value - define o valor da entrada
 --> new->index - coloca o index no numero conforme encontrado no sorted
---> if (!*a) - significa que se for o primeiro valor, ele apenas acrescenta sem fazer loop até o final
+--> if (!*a) - significa que se for o primeiro valor, ...
+...ele apenas acrescenta sem fazer loop até o final
 --> else - faz o loop até achar a posição final e armazenar o new
 (necessário para o t_stack não ficar na ordem inversa da entrada)
 */
 void	fill_stack(t_stack **a, int *original, int *sorted, int count)
 {
-	t_stack *new;
+	t_stack	*new;
 	t_stack	*tmp;
 	int		i;
 	int		index;
@@ -82,7 +102,7 @@ void	fill_stack(t_stack **a, int *original, int *sorted, int count)
 		if (!*a)
 			*a = new;
 		else
-		{	
+		{
 			tmp = *a;
 			while (tmp->next)
 				tmp = tmp->next;
@@ -103,6 +123,11 @@ char	*join_args(int ac, char **av)
 	i = 1;
 	while (i < ac)
 	{
+		if (!av[i] || ft_strlen(av[i]) == 0)
+		{
+			ft_putstr_fd("Error\nEmpty or invalid argument\n", 2);
+			return (free(joined), NULL);
+		}
 		joined = ft_strjoin_and_free(joined, av[i]);
 		joined = ft_strjoin_and_free(joined, " ");
 		if (!joined)

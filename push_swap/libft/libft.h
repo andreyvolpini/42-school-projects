@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 05:29:16 by avolpini          #+#    #+#             */
-/*   Updated: 2025/07/05 10:52:30 by marvin           ###   ########.fr       */
+/*   Updated: 2025/07/09 10:37:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ char	*ft_strdup(const char *s);
 
 char	**ft_split(const char *s, char c);
 void	free_split(char **result);
-
 
 #endif

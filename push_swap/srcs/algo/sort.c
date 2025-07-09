@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:28:55 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:28:55 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 void	sort_2(t_stack **a)
@@ -20,21 +32,21 @@ void	sort_3(t_stack **a)
 	first = (*a)->index;
 	second = (*a)->next->index;
 	third = (*a)->next->next->index;
-	if (first < second && second > third && third > first)//1 3 2 - 6 12 9
+	if (first < second && second > third && third > first)
 	{
-		do_sa(a);//3 1 2
-		do_ra(a);//1 2 3
-	}
-	else if (first > second && second < third && third > first)//2 1 3 - 9 6 12
 		do_sa(a);
-	else if (first < second && second > third && third < first)//2 3 1
-		do_rra(a);
-	else if (first > second && second < third && third < first)//3 1 2
 		do_ra(a);
-	else if (first > second && second > third)//3 2 1
+	}
+	else if (first > second && second < third && third > first)
+		do_sa(a);
+	else if (first < second && second > third && third < first)
+		do_rra(a);
+	else if (first > second && second < third && third < first)
+		do_ra(a);
+	else if (first > second && second > third)
 	{
-		do_sa(a);//2 3 1
-		do_rra(a);//1 2 3
+		do_sa(a);
+		do_rra(a);
 	}
 }
 
@@ -69,8 +81,8 @@ void	to_choose(t_stack **a, t_stack **b, int count)
 		sort_3(a);
 	else if (count <= 5)
 		sort_5(a, b);
-//	else if (count <= 100)
-//		chunk_sort(a, b, count);
+	else if (count <= 100)
+		chunk_sort(a, b, count);
 	else
 		radix_sort(a, b);
 }

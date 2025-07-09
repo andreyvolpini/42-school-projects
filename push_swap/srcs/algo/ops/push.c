@@ -1,19 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:32:49 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:32:49 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../push_swap.h"
 
-/*
-from = 12 4 3 NULL
-to = 7 1 6 NULL
-*/
 void	push(t_stack **from, t_stack **to)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!from || !to)
 		return ;
-	tmp = *from;//aponta para 12
-	*from = (*from)->next;//atualizamos from = 4 3 NULL
-	tmp->next = *to;// tmp recebe to, tmp = 12 7 1 6 NULL
-	*to = tmp;// to = 12 7 1 6 NULL
+	tmp = *from;
+	*from = (*from)->next;
+	tmp->next = *to;
+	*to = tmp;
 }
 
 void	do_pa(t_stack **a, t_stack **b)

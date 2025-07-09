@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avolpini <avolpini@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/03 16:29:03 by avolpini          #+#    #+#             */
+/*   Updated: 2025/07/03 16:29:03 by avolpini         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../push_swap.h"
 
 int	stack_size(t_stack *stack);
@@ -24,7 +36,7 @@ void	move_min_to_top(t_stack **a, int min_index)
 
 	pos = 0;
 	tmp = *a;
-	while(tmp && tmp->index != min_index)
+	while (tmp && tmp->index != min_index)
 	{
 		pos++;
 		tmp = tmp->next;
@@ -52,7 +64,5 @@ int	stack_size(t_stack *stack)
 		stack = stack->next;
 		size++;
 	}
-	return size;
+	return (size);
 }
-
-

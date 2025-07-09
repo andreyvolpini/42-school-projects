@@ -16,7 +16,9 @@ int	get_max_index(t_stack *stack)
 {
 	int	max;
 
-	max = stack ->index;
+	if (!stack)
+		return (-1);
+	max = stack->index;
 	while (stack)
 	{
 		if (stack-> index > max)
@@ -33,6 +35,8 @@ void	push_back_sorted(t_stack **a, t_stack **b)
 	while (*b)
 	{
 		max = get_max_index(*b);
+		if (max == -1)
+			break ;
 		if ((*b)->index == max)
 			do_pa(a, b);
 		else if (get_position(*b, max) <= (stack_size(*b) / 2))
