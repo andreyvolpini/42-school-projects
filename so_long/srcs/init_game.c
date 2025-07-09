@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
 
 static int	scan_map(t_game *game, char **map);
 

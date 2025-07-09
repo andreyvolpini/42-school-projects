@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
-#include <fcntl.h>
-#include <stdio.h>
 
 int			count_lines_in_file(char *file);
 int			count_lines(char **map);

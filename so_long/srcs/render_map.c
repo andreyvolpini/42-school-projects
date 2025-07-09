@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include <stdio.h>
 
 void	*chose_img(t_game *game, char tile);
 

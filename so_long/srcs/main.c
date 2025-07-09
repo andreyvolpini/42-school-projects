@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
-#include <fcntl.h>
 
 int	is_valid_ber(char *filename);
 int	close_game(t_game *game);

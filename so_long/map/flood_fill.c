@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
 
 static char	**dup_map(char **map);
 static int	find_player(char **map, int *px, int *py);

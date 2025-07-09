@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
 
 void	load_images(t_game *game)
 {

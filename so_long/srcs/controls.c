@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
 
 void		exit_game(t_game *game);
 void		move_player(t_game *game, int dx, int dy);

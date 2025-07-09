@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "../so_long.h"
-#include "../libft/libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 static int	is_validate_char(char c, int *p, int *e, int *c_count)
 {
