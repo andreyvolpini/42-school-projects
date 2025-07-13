@@ -1,7 +1,7 @@
 ## How to use this project
 
-```` ```bash ````
-cd Milestone_01/get_next_line ```` ``` ````
+```bash
+cd Milestone_01/get_next_line ````
 
 # -D BUFFER_SIZE=32 is optional; if not provided, it defaults in get_next_line.h
 ```bash
