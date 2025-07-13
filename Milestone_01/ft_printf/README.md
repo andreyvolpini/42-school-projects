@@ -20,7 +20,7 @@ Removes all object files and the executable produced by the build
 make fclean
 ```
 
-Runs `make fclean` followed by `make` to rebuild everything from scratch
+Rebuild from scratch
 ```bash
 make re      
 ```
