@@ -1,5 +1,9 @@
 ## How to use this project
 
+```bash
+cd Milestone_01/ft_printf
+```
+
 Run
 ```bash
 make
