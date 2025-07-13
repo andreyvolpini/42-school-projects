@@ -8,5 +8,4 @@ cd Milestone_01/get_next_line
 ```bash
 cc -D BUFFER_SIZE=32 get_next_line.c get_next_line_utils.c main.c
 ./a.out arquivo.txt
-```  <!-- Fecha o segundo bloco de bash -->
 ```
