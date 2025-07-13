@@ -1,8 +1,4 @@
-   ```bash
-   git clone https://github.com/andreyvolpini/42-school-projects/tree/main/Milestone_01/ft_printf
-   cd ft_printf
+## Como usar cada projeto
 
-
-   ```bash
-   make
-   ./ft_printf "Hello %s\n" "42!"
+make
+./ft_printf "Hello %s\n" "42!"
