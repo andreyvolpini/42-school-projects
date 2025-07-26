@@ -9,8 +9,9 @@
 
 void	child_process1(int infile, int pipefd[2], char *cmd, char **envp);
 void	child_process2(int outfile, int pipefd[2], char *cmd, char **envp);
-
 char	*find_path(char *cmd, char **envp);
 void	perror_exit(const char *msg);
+int		has_quotes(const char *s);
+char	**split_with_quotes(const char *cmd);
 
 #endif

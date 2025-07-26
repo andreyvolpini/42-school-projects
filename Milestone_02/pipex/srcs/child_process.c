@@ -1,8 +1,8 @@
 #include "../includes/pipex.h"
 
-void		perror_exit(const char *msg);
 static void	exec_cmd(char *cmd, char **envp);
 static char	*choose_path(char *cmd_name, char **envp);
+static void	handle_exec_error(char *path, char **args, int needs_free);
 
 void	child_process1(int infile, int pipefd[2], char *cmd, char **envp)
 {
@@ -38,20 +38,38 @@ static void	exec_cmd(char *cmd, char **envp)
 	char	*path;
 	int		needs_free;
 
-	args = ft_split(cmd, ' ');
-	if (!args)
+	if (has_quotes(cmd))
+		args = split_with_quotes(cmd);
+	else
+		args = ft_split(cmd, ' ');
+	if (!args || !args[0] || !args[0][0])
 	{
-		ft_putstr_fd("Error: ft_split failed", 2);
-		exit(EXIT_FAILURE);
+		ft_putstr_fd("pipex: empty command\n", 2);
+		free_split(args);
+		exit(127);
 	}
 	path = choose_path(args[0], envp);
+	if (!path)
+	{
+		free_split(args);
+		exit(127);
+	}
 	needs_free = !ft_strchr(args[0], '/');
 	execve(path, args, envp);
+	handle_exec_error(path, args, needs_free);
+}
+
+static void	handle_exec_error(char *path, char **args, int needs_free)
+{
+	perror(args[0]);
 	if (needs_free)
 		free(path);
 	free_split(args);
+	close(3);
 	if (errno == ENOENT)
 		exit(127);
+	else if (errno == EACCES || errno == EISDIR)
+		exit(126);
 	else
 		exit(EXIT_FAILURE);
 }
@@ -65,7 +83,7 @@ static char	*choose_path(char *cmd_name, char **envp)
 		if (access(cmd_name, X_OK) < 0)
 		{
 			perror(cmd_name);
-			exit(127);
+			exit(126);
 		}
 		return (cmd_name);
 	}
@@ -75,13 +93,8 @@ static char	*choose_path(char *cmd_name, char **envp)
 		ft_putstr_fd("bash: line 1: ", 2);
 		ft_putstr_fd(cmd_name, 2);
 		ft_putstr_fd(": command not found\n", 2);
-		exit(127);
+		close(4);
+		return (NULL);
 	}
 	return (path);
-}
-
-void	perror_exit(const char *msg)
-{
-	perror(msg);
-	exit(EXIT_FAILURE);
 }

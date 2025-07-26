@@ -4,6 +4,7 @@
 static pid_t	spawn_child1(int infile, int pipefd[2], char *cmd, char **envp);
 static pid_t	spawn_child2(int oufile, int pipefd[2], char *cmd, char **envp);
 static void		setup_fds(int ac, char **av, int *infile, int *outfile);
+void			perror_exit(const char *msg);
 
 int	main(int ac, char **av, char **envp)
 {
@@ -56,7 +57,7 @@ static void	setup_fds(int ac, char **av, int *infile, int *outfile)
 	if (ac != 5)
 	{
 		ft_putstr_fd("Usage: ./pipex infile cmd1 cmd2 outfile\n", 2);
-		return (1);
+		exit(EXIT_FAILURE);
 	}
 	*infile = open(av[1], O_RDONLY);
 	if (*infile < 0)
@@ -64,4 +65,10 @@ static void	setup_fds(int ac, char **av, int *infile, int *outfile)
 	*outfile = open(av[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (*outfile < 0)
 		perror_exit(av[4]);
+}
+
+void	perror_exit(const char *msg)
+{
+	perror(msg);
+	exit(EXIT_FAILURE);
 }
