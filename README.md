@@ -13,15 +13,16 @@
 
 ## 📚 Projects
 
-| Project         | Status         | Description                                                             |
-|----------------|----------------|-------------------------------------------------------------------------|
-| [`libft`](./libft)              | ✅ Completed     | Standard C library with fundamental functions                          |
-| [`ft_printf`](./ft_printf)      | ✅ Completed     | Reimplementation of the `printf` function with parsing and formatting  |
-| [`get_next_line`](./get_next_line) | ✅ Completed   | Line-by-line file reader with dynamic buffer handling                   |
-| [`born2beroot`](./born2beroot)  | ✅ Completed     | Linux server setup using UFW, sudo, and hostname configuration         |
-| [`so_long`](./so_long)          | ✅ Completed     | Simple 2D game using MiniLibX and `.ber` map parsing                   |
-| [`push_swap`](./push_swap)      | ✅ Completed     | Number sorting algorithm using stacks and limited operations           |
-| [`pipex`](./pipex)              | 🚧 In Progress   | Command execution with fork, pipe, and `dup2`                          |
+| Project                            | Status           | Description                                                            |
+|------------------------------------|------------------|------------------------------------------------------------------------|
+| [`libft`](./libft)                 | ✅ Completed     | Standard C library with fundamental functions                          |
+| [`ft_printf`](./ft_printf)         | ✅ Completed     | Reimplementation of the `printf` function with parsing and formatting  |
+| [`get_next_line`](./get_next_line) | ✅ Completed     | Line-by-line file reader with dynamic buffer handling                  |
+| [`born2beroot`](./born2beroot)     | ✅ Completed     | Linux server setup using UFW, sudo, and hostname configuration         |
+| [`so_long`](./so_long)             | ✅ Completed     | Simple 2D game using MiniLibX and `.ber` map parsing                   |
+| [`push_swap`](./push_swap)         | ✅ Completed     | Number sorting algorithm using stacks and limited operations           |
+| [`pipex`](./pipex)                 | ✅ Completed     | Command execution with fork, pipe, and `dup2`                          |
+| [`minishell`](./minishell)         | 🚧 In Progress   |                                                                        |
 
 ---
 
@@ -33,6 +34,7 @@
 - 📁 [`so_long`](./so_long)
 - 📁 [`push_swap`](./push_swap)
 - 📁 [`pipex`](./pipex)
+- 📁 [`minishell`](./minishell)
 
 ---
 
