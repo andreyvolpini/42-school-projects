@@ -148,7 +148,7 @@ static void	cleanup(unsigned char **stash, size_t *len)
 	*stash = NULL;
 	*len = 0;
 }
-
+/*
 int	main(void)
 {
 	int		fd = open("get_next_line.c", O_RDONLY);
@@ -162,3 +162,4 @@ int	main(void)
 	close(fd);
 	return (0);
 }
+*/
