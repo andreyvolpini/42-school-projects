@@ -4,6 +4,7 @@
 *.a
 *.so
 *.exe
+*.gch
 
 # Arquivos gerados por make
 *.d
