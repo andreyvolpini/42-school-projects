@@ -67,7 +67,7 @@ int	negative_parse(unsigned long long acum, long long *out)
 
 	if (!out)
 		return (0);
-	edge = (unsigned long long)LLONG_MAX + 1ULL;
+	edge = (unsigned long long)LLONG_MAX;
 	if (acum > edge)
 		return (0);
 	if (acum == edge)
