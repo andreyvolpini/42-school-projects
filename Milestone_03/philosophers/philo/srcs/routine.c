@@ -13,6 +13,7 @@
 #include "philo.h"
 #include <unistd.h>
 
+static int	philo_routine_loop(t_table *t, t_philo *p);
 static void	release_forks(t_philo *p);
 static int	take_forks(t_philo *p);
 static void	do_eat(t_philo *p);
@@ -36,13 +37,7 @@ void	*philo_routine(void *arg)
 		usleep(1000);
 	while (sim_running(t))
 	{
-		if (t->rules.has_must_eat && get_meals(p) >= t->rules.must_eat)
-			return (NULL);
-		if (!take_forks(p))
-			return (NULL);
-		do_eat(p);
-		release_forks(p);
-		if (t->rules.has_must_eat && get_meals(p) >= t->rules.must_eat)
+		if (philo_routine_loop(t, p) != 0)
 			return (NULL);
 		print_state(t, p->id, MSG_SLEEP);
 		go_sleep(t, t->rules.time_to_sleep);
@@ -50,6 +45,19 @@ void	*philo_routine(void *arg)
 		usleep(500);
 	}
 	return (NULL);
+}
+
+static int	philo_routine_loop(t_table *t, t_philo *p)
+{
+	if (t->rules.has_must_eat && get_meals(p) >= t->rules.must_eat)
+		return (1);
+	if (!take_forks(p))
+		return (1);
+	do_eat(p);
+	release_forks(p);
+	if (t->rules.has_must_eat && get_meals(p) >= t->rules.must_eat)
+		return (1);
+	return (0);
 }
 
 static int	take_forks(t_philo *p)
@@ -76,14 +84,15 @@ static int	take_forks(t_philo *p)
 	print_state(t, p->id, MSG_FORK);
 	pthread_mutex_lock(&t->fork[fork_2]);
 	if (!sim_running(t))
-		return (pthread_mutex_unlock(&t->fork[fork_2]), pthread_mutex_unlock(&t->fork[fork_1]), 0);
+		return (pthread_mutex_unlock(&t->fork[fork_2]),
+			pthread_mutex_unlock(&t->fork[fork_1]), 0);
 	return (print_state(t, p->id, MSG_FORK), 1);
 }
 
 static void	do_eat(t_philo *p)
 {
 	t_table		*t;
-	
+
 	t = p->table;
 	if (!sim_running(t))
 		return ;
@@ -116,4 +125,3 @@ static void	release_forks(t_philo *p)
 	pthread_mutex_unlock(&t->fork[fork_2]);
 	pthread_mutex_unlock(&t->fork[fork_1]);
 }
-
