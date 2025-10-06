@@ -32,10 +32,7 @@ int	main(int ac, char **av)
 
 	while (1)
 	{
-		do
-		{
-			b_read = read(0, buf + t_read, BUFFER_SIZE);
-		} while (b_read < 0 && errno == EINTR);
+		b_read = read(0, buf + t_read, BUFFER_SIZE);
 
 		if (b_read < 0)
 		{
@@ -98,3 +95,4 @@ static size_t	ft_strlen_nullsafe(const char *s)
 		i++;
 	return (i);
 }
+
