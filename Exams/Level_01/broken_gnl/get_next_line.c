@@ -24,10 +24,7 @@ char	*get_next_line(int fd)
 	
 	while (1)
 	{
-		do
-		{
-			b_read = read(fd, buf, BUFFER_SIZE);
-		}	while (b_read < 0 && errno == EINTR);
+		b_read = read(fd, buf, BUFFER_SIZE);
 
 		if (b_read < 0)
 		{
@@ -163,3 +160,4 @@ int	main(void)
 	return (0);
 }
 */
+
