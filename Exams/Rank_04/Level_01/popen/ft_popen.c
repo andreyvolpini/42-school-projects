@@ -1,12 +1,12 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
+#include <unistd.h> // pipe, fork, dup2, execvp, close
+#include <stdlib.h> // exit
 
 int	ft_popen(const char *file, char const **av, char type)
 {
 	int		fd[2];
 	pid_t	pid;
 
+	// validations
 	if (!file || !av || (type != 'r' && type != 'w'))
 		return (-1);
 	if (pipe(fd) < 0)
@@ -23,12 +23,14 @@ int	ft_popen(const char *file, char const **av, char type)
 	if (pid == 0)
 	{
 		if (type == 'r')
-		{
+		{	// Son => stdout -> fd[1];
+			// Father => read(fd[0]); 
 			if (dup2(fd[1], STDOUT_FILENO) < 0)
 				exit (1);
 		}
 		else
-		{
+		{	// Son => stdin <- fd[0];
+			// Father => write(fd[1]);
 			if (dup2(fd[0], STDIN_FILENO) < 0)
 				exit (1);
 		}
